@@ -1,6 +1,6 @@
 # deployments
 
-
+for repo in $(curl --header "PRIVATE-TOKEN:glpat-k8-e-eL3votSXYxzvCft" -s "https://gitlab.com/api/v4/groups/69554070/projects?include_subgroups=true&per_page=100&page=1" | jq '.[].ssh_url_to_repo' | tr -d '"'); do git clone $repo; done;
 
 ## Getting started
 
